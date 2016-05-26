@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/mycss.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/flide.js"></script>
+</head>
+<body>
+    <div class="content">
+
+
+        <div class="left">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </div>
+
+        <div class="content_img">
+        <div class="img1">
+            <img src="image/1.jpg" alt="图片1">
+            </div>
+        <div class="img1 on" >
+            <img src="image/2.jpg" alt="图片2">
+        </div>
+        <div class="img1 on" >
+            <img src="image/3.jpg" alt="图片3">
+        </div>
+        </div>
+        <div class="right">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </div>
+    </div>
+</body>
+<script>
+    var index = 0;
+//    var length = $(".img1").length;
+    $(".right").on("click",function(){
+        $(".img1").eq((index)%3).animate({left:"-600px"},500,"linear");
+        $(".img1").eq((index)%3).animate({left:"738px"},0);
+        index++;
+        $(".img1").eq((index)%3).animate({left:"75px"},500,"linear");
+    })
+    $(".left").on("click",function(){
+        $(".img1").eq((index)%3).animate({left:"738px"},500,"linear");
+//        $(".img1").eq((index)%3).animate({left:"738px"},0);
+        index--;
+        $(".img1").eq((index)%3).animate({left:"-600px"},0);
+        $(".img1").eq((index)%3).animate({left:"75px"},500,"linear");
+    })
+</script>
+</html>
